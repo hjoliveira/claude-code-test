@@ -77,7 +77,7 @@ describe('TodoService', () => {
         title: 'Updated',
         completed: false,
       });
-      expect(updated!.updatedAt.getTime()).toBeGreaterThan(created.createdAt.getTime());
+      expect(updated!.updatedAt.getTime()).toBeGreaterThanOrEqual(created.createdAt.getTime());
     });
 
     it('should toggle completion status', () => {

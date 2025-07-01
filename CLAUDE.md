@@ -41,7 +41,7 @@ Full-stack TypeScript application with Express REST API and React frontend:
 - **Routes**: Express routes mounted at `/api` endpoint
 - All todos stored in memory (no persistence)
 
-### Frontend Architecture  
+### Frontend Architecture
 - **API client** (`src/client/api.ts`): Handles HTTP requests to backend
 - **React components**: TodoItem, TodoList, AddTodoForm with full CRUD functionality
 - **Vite proxy**: Development server proxies `/api` requests to Express server

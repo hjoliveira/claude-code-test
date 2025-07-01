@@ -18,6 +18,13 @@ export default [
           jsx: true,
         },
       },
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        fetch: 'readonly',
+        document: 'readonly',
+        beforeEach: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': tsPlugin,

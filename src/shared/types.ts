@@ -6,6 +6,14 @@ export interface Todo {
   updatedAt: Date;
 }
 
+export interface ApiTodo {
+  id: string;
+  title: string;
+  completed: boolean;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface CreateTodoRequest {
   title: string;
 }

@@ -1,4 +1,4 @@
-import { Todo, CreateTodoRequest, UpdateTodoRequest } from '../shared/types';
+import { Todo, ApiTodo, CreateTodoRequest, UpdateTodoRequest } from '../shared/types';
 
 const API_BASE = '/api';
 
@@ -8,8 +8,8 @@ export const todoApi = {
     if (!response.ok) {
       throw new Error('Failed to fetch todos');
     }
-    const todos = await response.json();
-    return todos.map((todo: any) => ({
+    const todos = await response.json() as ApiTodo[];
+    return todos.map((todo) => ({
       ...todo,
       createdAt: new Date(todo.createdAt),
       updatedAt: new Date(todo.updatedAt)
@@ -27,7 +27,7 @@ export const todoApi = {
     if (!response.ok) {
       throw new Error('Failed to create todo');
     }
-    const todo = await response.json();
+    const todo = await response.json() as ApiTodo;
     return {
       ...todo,
       createdAt: new Date(todo.createdAt),
@@ -46,7 +46,7 @@ export const todoApi = {
     if (!response.ok) {
       throw new Error('Failed to update todo');
     }
-    const todo = await response.json();
+    const todo = await response.json() as ApiTodo;
     return {
       ...todo,
       createdAt: new Date(todo.createdAt),
